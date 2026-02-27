@@ -1,0 +1,121 @@
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;              
+  height: 55px; /* thinner height */
+  background: rgba(26, 35, 60, 0.75); /* semi-transparent */
+  backdrop-filter: blur(6px); /* subtle blur */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1); /* subtle shadow */
+}
+
+.nav-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-size: 1.3rem; /* smaller for thin navbar */
+  font-weight: 700;
+  color: #e0f2fe;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: #e0f2fe;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.95rem; /* slightly smaller text */
+  padding: 8px 0; /* vertical padding less for thinness */
+}
+
+.nav-links li a:hover {
+  color: #3B82F6;
+  transform: scale(1.05);
+} 
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #0b1120;
+    color: #e5e7eb;
+  }
+  
+  .skills-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 20px;
+  }
+  
+  .skills-header {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+  
+  .skills-header h1 {
+    font-size: 42px;
+    color: #ffffff;
+  }
+  
+  .skills-header p {
+    max-width: 700px;
+    margin: 15px auto;
+    color: #9ca3af;
+    font-size: 16px;
+  }
+  
+  .skills-group {
+    margin-bottom: 70px;
+  }
+  
+  .skills-group h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #93c5fd;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+  }
+  
+  .skill-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(147, 197, 253, 0.15);
+    border-radius: 14px;
+    padding: 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .skill-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(147, 197, 253, 0.5);
+    background: rgba(142, 167, 193, 0.06);
+  }
+  
+  .skill-card h3 {
+    margin-top: 0;
+    color: #ffffff;
+    font-size: 18px;
+  }
+  
+  .skill-card p {
+    color: #9ca3af;
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
