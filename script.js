@@ -1,3 +1,18 @@
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+  // Toggle the 'active' class on the nav links
+  navLinks.classList.toggle("active");
+  
+  // Optional: Animation for the hamburger lines
+  hamburger.classList.toggle("toggle");
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll(".nav-links li a").forEach(n => n.addEventListener("click", () => {
+  navLinks.classList.remove("active");
+}));
 const projects = {
     "Machine Learning": [
       {
