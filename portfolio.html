@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Zainab</title>
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+
+<body>
+
 <nav class="navbar">
   <div class="nav-logo">Zainab</div>
 
@@ -9,10 +20,6 @@
   </ul>
 </nav>
 
-<head>
-  <link rel="stylesheet" href="portfolio.css">
-</head>
-
 <section class="portfolio">
 
   <h2>My Projects</h2>
@@ -22,6 +29,74 @@
   </p>
 
   <div class="portfolio-grid">
+
+    <!-- ======================= Featured Project (n8n Lead Generation Automation) =======================
+         Needs one image:  images/n8n-lead-generation.png
+         "View Details" opens the popup defined at the bottom of this file (id="n8n-details").
+    ============================================================================================ -->
+
+    <div class="portfolio-card">
+      <div class="card-media">
+        <span class="card-badge">n8n Cloud Automation</span>
+        <img src="images/n8n-lead-generation.png" alt="n8n AI Lead Generation and Outreach Automation Workflow">
+      </div>
+
+      <div class="portfolio-content">
+
+        <h3>AI Lead Generation & Cold Outreach Automation (n8n)</h3>
+
+        <p>
+          Built an end-to-end <strong>n8n automation</strong> that finds
+          high-potential business leads on <strong>Google Maps</strong> for any
+          target region (UK, US, or custom), stores every company's details in
+          <strong>Google Sheets</strong>, and uses <strong>AI</strong> to analyze
+          each business, identify its likely pain points, and match them to my
+          services. It then writes a <strong>personalized solution-focused
+          email</strong> and saves it as a <strong>Gmail draft</strong> —
+          turning hours of manual prospecting into a fully automated pipeline.
+        </p>
+
+        <div class="flow-steps">
+          <span class="step">Google Maps</span>
+          <span class="arrow">→</span>
+          <span class="step">Google Sheets</span>
+          <span class="arrow">→</span>
+          <span class="step">AI Analysis</span>
+          <span class="arrow">→</span>
+          <span class="step">Gmail Draft</span>
+        </div>
+
+        <ul class="portfolio-highlights">
+          <li><strong>Region-based lead discovery</strong> — search any country, city, or industry on demand</li>
+          <li><strong>Structured data capture</strong> — company name, address, phone, website, and ratings saved automatically</li>
+          <li><strong>AI problem analysis</strong> — identifies each company's gaps and maps them to relevant services</li>
+          <li><strong>Human-in-the-loop outreach</strong> — emails land as drafts, ready to review before sending</li>
+        </ul>
+
+        <div class="portfolio-tags">
+          <span>n8n</span>
+          <span>Workflow Automation</span>
+          <span>Lead Generation</span>
+          <span>Google Maps</span>
+          <span>Google Sheets</span>
+          <span>Gmail API</span>
+          <span>AI Agents</span>
+          <span>LLM</span>
+          <span>Prompt Engineering</span>
+          <span>Email Automation</span>
+          <span>Cold Outreach</span>
+          <span>Data Scraping</span>
+          <span>Low-Code</span>
+          <span>API Integration</span>
+          <span>Cloud Automation</span>
+        </div>
+
+        <div class="portfolio-buttons single">
+          <button type="button" class="btn-primary" data-open-modal="n8n-details" aria-haspopup="dialog">View Details</button>
+        </div>
+
+      </div>
+    </div>
 
     <!-- ======================= Project 1 (Green Flora) ======================= -->
 
@@ -103,7 +178,7 @@
           <strong>84.2% validation accuracy</strong> while significantly reducing
           GPU memory consumption and training costs through
           <strong>4-bit quantization</strong>, low-rank adaptation, and efficient
-          PEFT techniques. 
+          PEFT techniques.
         </p>
 
         <div class="portfolio-tags">
@@ -136,93 +211,93 @@
 
     <!-- ======================= Project 3 ======================= -->
 
-   <div class="portfolio-card">
-  <img src="images/prismai.png" alt="PrismAI">
+    <div class="portfolio-card">
+      <img src="images/prismai.png" alt="PrismAI">
 
-  <div class="portfolio-content">
+      <div class="portfolio-content">
 
-    <h3>PrismAI – AI Document Intelligence Platform</h3>
+        <h3>PrismAI – AI Document Intelligence Platform</h3>
 
-    <p>
-      Developed a production-ready AI document assistant that enables users to
-      upload PDFs, DOCX, CSV, XLSX, and TXT files, ask natural language
-      questions, and receive context-aware answers using
-      <strong>Retrieval-Augmented Generation (RAG)</strong>. Built with
-      FastAPI, Next.js, OpenAI Embeddings, Supabase, and Qdrant Vector
-      Database, delivering intelligent semantic search with an intuitive user
-      experience.
-    </p>
+        <p>
+          Developed a production-ready AI document assistant that enables users to
+          upload PDFs, DOCX, CSV, XLSX, and TXT files, ask natural language
+          questions, and receive context-aware answers using
+          <strong>Retrieval-Augmented Generation (RAG)</strong>. Built with
+          FastAPI, Next.js, OpenAI Embeddings, Supabase, and Qdrant Vector
+          Database, delivering intelligent semantic search with an intuitive user
+          experience.
+        </p>
 
-    <div class="portfolio-tags">
-      <span>Python</span>
-      <span>FastAPI</span>
-      <span>RAG</span>
-      <span>LangChain</span>
-      <span>OpenAI</span>
-      <span>Embeddings</span>
-      <span>Qdrant</span>
-      <span>Supabase</span>
-      <span>Next.js</span>
-      <span>Vector Database</span>
-      <span>Vercel</span>
-      <span>Render</span>
-      <span>Semantic Search</span>
-      <span>Document AI</span>
-      <span>Full-Stack AI</span>
+        <div class="portfolio-tags">
+          <span>Python</span>
+          <span>FastAPI</span>
+          <span>RAG</span>
+          <span>LangChain</span>
+          <span>OpenAI</span>
+          <span>Embeddings</span>
+          <span>Qdrant</span>
+          <span>Supabase</span>
+          <span>Next.js</span>
+          <span>Vector Database</span>
+          <span>Vercel</span>
+          <span>Render</span>
+          <span>Semantic Search</span>
+          <span>Document AI</span>
+          <span>Full-Stack AI</span>
+        </div>
+
+        <div class="portfolio-buttons">
+          <a href="https://drive.google.com/file/d/1p13FsETNRa5yBkopTgzp-omXNKvv-c3S/view?usp=sharing" class="btn-outline">View Details</a>
+          <a href="https://github.com/zainab123456440/prismai-backend" class="btn-primary">Github</a>
+        </div>
+
+      </div>
     </div>
-
-    <div class="portfolio-buttons">
-      <a href="https://drive.google.com/file/d/1p13FsETNRa5yBkopTgzp-omXNKvv-c3S/view?usp=sharing" class="btn-outline">View Details</a>
-      <a href="https://github.com/zainab123456440/prismai-backend" class="btn-primary">Github</a>
-    </div>
-
-  </div>
-</div>
 
     <!-- ======================= Project 4 ======================= -->
 
     <div class="portfolio-card">
-  <img src="images/customer support agent.png" alt="AI Customer Support Agent">
+      <img src="images/customer support agent.png" alt="AI Customer Support Agent">
 
-  <div class="portfolio-content">
+      <div class="portfolio-content">
 
-    <h3>AI Customer Support Agent</h3>
+        <h3>AI Customer Support Agent</h3>
 
-    <p>
-      Built an <strong>LLM-powered customer support agent</strong> that plugs
-      directly into a live <strong>Shopify store</strong>, answering order,
-      shipping, and product questions in real time without human intervention.
-      The agent uses <strong>prompt engineering</strong> and structured
-      <strong>API integrations</strong> to pull live store data — order
-      status, inventory, policies — and ground its responses in accurate,
-      up-to-date information rather than guesswork. Designed around a
-      <strong>FastAPI backend</strong> for fast request handling, the system
-      reduced manual response time and gave the store a 24/7 first line of
-      support, freeing the team to focus on complex, high-value customer
-      issues instead of repetitive queries.
-    </p>
+        <p>
+          Built an <strong>LLM-powered customer support agent</strong> that plugs
+          directly into a live <strong>Shopify store</strong>, answering order,
+          shipping, and product questions in real time without human intervention.
+          The agent uses <strong>prompt engineering</strong> and structured
+          <strong>API integrations</strong> to pull live store data — order
+          status, inventory, policies — and ground its responses in accurate,
+          up-to-date information rather than guesswork. Designed around a
+          <strong>FastAPI backend</strong> for fast request handling, the system
+          reduced manual response time and gave the store a 24/7 first line of
+          support, freeing the team to focus on complex, high-value customer
+          issues instead of repetitive queries.
+        </p>
 
-    <div class="portfolio-tags">
-      <span>Python</span>
-      <span>LLM</span>
-      <span>FastAPI</span>
-      <span>Shopify API</span>
-      <span>Chatbot</span>
-      <span>Prompt Engineering</span>
-      <span>API Integration</span>
-      <span>Conversational AI</span>
-      <span>REST API</span>
-      <span>E-commerce Automation</span>
-      <span>Customer Support AI</span>
+        <div class="portfolio-tags">
+          <span>Python</span>
+          <span>LLM</span>
+          <span>FastAPI</span>
+          <span>Shopify API</span>
+          <span>Chatbot</span>
+          <span>Prompt Engineering</span>
+          <span>API Integration</span>
+          <span>Conversational AI</span>
+          <span>REST API</span>
+          <span>E-commerce Automation</span>
+          <span>Customer Support AI</span>
+        </div>
+
+        <div class="portfolio-buttons">
+          <a href="https://docs.google.com/presentation/d/1tP8oJsFLaQiPVavpTriTq1BuzT7SFkuvLawmUZs0IQM/edit?usp=sharing" class="btn-outline">View Details</a>
+          <a href="https://github.com/zainab123456440/customer_support_agent" class="btn-primary">Github</a>
+        </div>
+
+      </div>
     </div>
-
-    <div class="portfolio-buttons">
-      <a href="https://docs.google.com/presentation/d/1tP8oJsFLaQiPVavpTriTq1BuzT7SFkuvLawmUZs0IQM/edit?usp=sharing" class="btn-outline">View Details</a>
-      <a href="https://github.com/zainab123456440/customer_support_agent" class="btn-primary">Github</a>
-    </div>
-
-  </div>
-</div>
 
     <!-- ======================= Project 5 ======================= -->
 
@@ -331,3 +406,139 @@
   </div>
 
 </section>
+
+<!-- ======================= Project Details Popup (n8n Lead Generation) ======================= -->
+
+<dialog class="project-modal" id="n8n-details" aria-labelledby="n8n-details-title">
+  <div class="modal-panel">
+
+    <button type="button" class="modal-close" data-close-modal aria-label="Close details">&times;</button>
+
+    <header class="modal-header">
+      <span class="card-badge">n8n Cloud Automation</span>
+      <h3 id="n8n-details-title">AI Lead Generation &amp; Cold Outreach Automation</h3>
+      <p class="modal-lead">
+        A fully automated prospecting pipeline that discovers businesses in any region,
+        works out what they are likely struggling with, and prepares a personalized
+        solution email for each one — ready to review in Gmail.
+      </p>
+    </header>
+
+    <div class="modal-stats">
+      <div class="stat"><span class="stat-label">Platform</span><span class="stat-value">n8n Cloud</span></div>
+      <div class="stat"><span class="stat-label">Target Regions</span><span class="stat-value">UK, US &amp; Custom</span></div>
+      <div class="stat"><span class="stat-label">Lead Storage</span><span class="stat-value">Google Sheets</span></div>
+      <div class="stat"><span class="stat-label">Output</span><span class="stat-value">Gmail Drafts</span></div>
+    </div>
+
+    <section class="modal-section">
+      <h4>The Problem</h4>
+      <p>
+        Finding clients manually means hours of searching for businesses, copying their details,
+        guessing what they need, and writing every outreach email from scratch. It is slow,
+        repetitive, and hard to scale.
+      </p>
+    </section>
+
+    <section class="modal-section">
+      <h4>How It Works</h4>
+      <ol class="modal-steps">
+        <li>
+          <strong>Choose a target</strong>
+          <span>Pick a region (UK, US, or anywhere) and a business category to search for.</span>
+        </li>
+        <li>
+          <strong>Discover companies on Google Maps</strong>
+          <span>The workflow searches Google Maps and collects every matching business in that area.</span>
+        </li>
+        <li>
+          <strong>Store everything in Google Sheets</strong>
+          <span>Company name, address, phone, website, and other details are saved to a clean, region-wise sheet.</span>
+        </li>
+        <li>
+          <strong>AI analyzes each company</strong>
+          <span>An AI agent reviews each business and identifies the problems and gaps it is most likely facing.</span>
+        </li>
+        <li>
+          <strong>Match problems to my services</strong>
+          <span>The AI maps each problem to the service that solves it and shapes a tailored solution.</span>
+        </li>
+        <li>
+          <strong>Draft the outreach email in Gmail</strong>
+          <span>A personalized email is written and saved as a draft, so every message is reviewed before it is sent.</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="modal-section">
+      <h4>Key Features</h4>
+      <ul class="modal-features">
+        <li><strong>Region-based targeting</strong> — switch markets by changing a single input</li>
+        <li><strong>Automatic data capture</strong> — no copy-pasting, no manual research</li>
+        <li><strong>Personalized emails</strong> — each one speaks to that company's specific problem</li>
+        <li><strong>Human-in-the-loop</strong> — drafts only, so nothing goes out unreviewed</li>
+        <li><strong>Scalable</strong> — run it for hundreds of companies in the same time as one</li>
+        <li><strong>Fully hands-off</strong> — runs end to end inside n8n Cloud</li>
+      </ul>
+    </section>
+
+    <section class="modal-section">
+      <h4>Tech Stack</h4>
+      <div class="portfolio-tags">
+        <span>n8n</span>
+        <span>Google Maps</span>
+        <span>Google Sheets</span>
+        <span>Gmail API</span>
+        <span>AI Agents</span>
+        <span>LLM</span>
+        <span>Prompt Engineering</span>
+        <span>Workflow Automation</span>
+        <span>API Integration</span>
+      </div>
+    </section>
+
+    <footer class="modal-footer">
+      <button type="button" class="btn-outline" data-close-modal>Close</button>
+    </footer>
+
+  </div>
+</dialog>
+
+<script>
+  (function () {
+    var body = document.body;
+
+    document.querySelectorAll('[data-open-modal]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var dlg = document.getElementById(btn.getAttribute('data-open-modal'));
+        if (!dlg) return;
+        if (typeof dlg.showModal === 'function') { dlg.showModal(); } else { dlg.setAttribute('open', ''); }
+        body.classList.add('modal-open');
+        var panel = dlg.querySelector('.modal-panel');
+        if (panel) panel.scrollTop = 0;
+      });
+    });
+
+    document.querySelectorAll('dialog.project-modal').forEach(function (dlg) {
+      function close() {
+        if (typeof dlg.close === 'function') { dlg.close(); } else { dlg.removeAttribute('open'); }
+        body.classList.remove('modal-open');
+      }
+
+      dlg.querySelectorAll('[data-close-modal]').forEach(function (b) {
+        b.addEventListener('click', close);
+      });
+
+      // click on the dark backdrop (outside the panel) closes it
+      dlg.addEventListener('click', function (e) {
+        if (e.target === dlg) close();
+      });
+
+      // Esc key
+      dlg.addEventListener('close', function () { body.classList.remove('modal-open'); });
+    });
+  })();
+</script>
+
+</body>
+</html>

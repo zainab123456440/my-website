@@ -220,6 +220,7 @@ body {
 .portfolio-grid .portfolio-card:nth-child(5) { animation-delay: 0.33s; }
 .portfolio-grid .portfolio-card:nth-child(6) { animation-delay: 0.40s; }
 .portfolio-grid .portfolio-card:nth-child(7) { animation-delay: 0.47s; }
+.portfolio-grid .portfolio-card:nth-child(8) { animation-delay: 0.54s; }
 
 @keyframes card-rise {
   from { opacity: 0; transform: translateY(18px); }
@@ -431,6 +432,466 @@ body {
 }
 
 /* ==========================================================================
+   AUTOMATION CARD ADDITIONS (n8n Lead Generation)
+   - .card-media + .card-badge : image wrapper with a floating label
+   - .flow-steps               : mini pipeline strip showing the workflow
+   - .portfolio-highlights     : small checklist of key outcomes
+   - .portfolio-buttons.single : one full-width button (no GitHub repo)
+   ========================================================================== */
+
+.card-media {
+  position: relative;
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+}
+
+.card-media img {
+  height: 100%;
+}
+
+.card-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(2, 6, 23, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  color: var(--accent-cyan);
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+/* Pulsing "live" dot — the automation is always running */
+.card-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.6);
+  animation: badge-pulse 2s infinite;
+}
+
+@keyframes badge-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.55); }
+  70%  { box-shadow: 0 0 0 8px rgba(34, 211, 238, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+}
+
+/* ---- Pipeline strip ---- */
+
+.flow-steps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 22px;
+  padding: 14px;
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px dashed rgba(59, 130, 246, 0.25);
+  border-radius: var(--radius-md);
+}
+
+.flow-steps .step {
+  padding: 5px 11px;
+  border-radius: 8px;
+  background: var(--bg-void);
+  border: 1px solid var(--border-hairline);
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.flow-steps .arrow {
+  color: var(--accent-cyan);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ---- Highlights list ---- */
+
+.portfolio-highlights {
+  list-style: none;
+  margin: 0 0 22px;
+  padding: 0;
+  display: grid;
+  gap: 9px;
+}
+
+.portfolio-highlights li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.portfolio-highlights li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+}
+
+.portfolio-highlights strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ---- Single full-width button ---- */
+
+.portfolio-buttons.single .btn-primary,
+.portfolio-buttons.single .btn-outline {
+  flex: 1 1 100%;
+}
+
+/* ==========================================================================
+   PROJECT DETAILS POPUP (native <dialog>)
+   Opens from the "View Details" button on a card. Closes with the X,
+   the Close button, the Esc key, or a click on the dark backdrop.
+   ========================================================================== */
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.project-modal {
+  width: min(780px, 92vw);
+  max-width: none;
+  max-height: 88vh;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  overflow: visible;
+}
+
+.project-modal::backdrop {
+  background: rgba(2, 6, 23, 0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.project-modal[open] {
+  animation: modal-in 0.45s var(--ease-soft);
+}
+
+.project-modal[open]::backdrop {
+  animation: modal-fade 0.35s ease;
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes modal-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal-panel {
+  position: relative;
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 44px 40px 32px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(34, 211, 238, 0.07), transparent 45%),
+    var(--bg-card);
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(59, 130, 246, 0.08);
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-hover) transparent;
+}
+
+/* gradient trace along the top edge, same motif as the cards */
+.modal-panel::before {
+  content: "";
+  display: block;
+  height: 3px;
+  margin: -44px -40px 41px;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+  z-index: 2;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 5;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--border-hairline);
+  background: rgba(2, 6, 23, 0.7);
+  color: var(--text-muted);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.25s var(--ease-soft), border-color 0.25s var(--ease-soft), transform 0.25s var(--ease-soft);
+}
+
+.modal-close:hover {
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  transform: rotate(90deg);
+}
+
+.modal-close:focus-visible,
+.btn-primary:focus-visible,
+.btn-outline:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+}
+
+/* ---- Header ---- */
+
+.modal-header .card-badge {
+  position: static;
+  margin-bottom: 16px;
+}
+
+.modal-header h3 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3.2vw, 30px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  color: var(--text-heading);
+  margin: 0 0 14px;
+  padding-right: 36px;
+}
+
+.modal-lead {
+  margin: 0 0 26px;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+/* ---- Quick facts ---- */
+
+.modal-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 34px;
+}
+
+.modal-stats .stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  background: rgba(59, 130, 246, 0.06);
+  border: 1px solid rgba(59, 130, 246, 0.16);
+  border-radius: var(--radius-md);
+}
+
+.stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+/* ---- Sections ---- */
+
+.modal-section {
+  margin-bottom: 32px;
+}
+
+.modal-section h4 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 16px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+}
+
+.modal-section h4::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border-hover), transparent);
+}
+
+.modal-section > p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+/* ---- Numbered steps with connector line ---- */
+
+.modal-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: step;
+}
+
+.modal-steps li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 0 0 22px 52px;
+  counter-increment: step;
+}
+
+.modal-steps li:last-child {
+  padding-bottom: 0;
+}
+
+.modal-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--bg-void);
+  border: 1.5px solid var(--accent-blue);
+  color: var(--accent-cyan);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.modal-steps li::after {
+  content: "";
+  position: absolute;
+  left: 16.5px;
+  top: 38px;
+  bottom: 4px;
+  width: 1px;
+  background: linear-gradient(180deg, var(--accent-blue), rgba(59, 130, 246, 0.1));
+}
+
+.modal-steps li:last-child::after {
+  display: none;
+}
+
+.modal-steps strong {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-heading);
+  padding-top: 6px;
+}
+
+.modal-steps span {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+/* ---- Feature grid ---- */
+
+.modal-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.modal-features li {
+  position: relative;
+  padding: 14px 16px 14px 38px;
+  background: rgba(2, 6, 23, 0.55);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  transition: border-color 0.3s var(--ease-soft), transform 0.3s var(--ease-soft);
+}
+
+.modal-features li:hover {
+  border-color: rgba(34, 211, 238, 0.35);
+  transform: translateY(-2px);
+}
+
+.modal-features li::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 19px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+}
+
+.modal-features strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.modal-section .portfolio-tags {
+  margin-bottom: 0;
+}
+
+/* ---- Footer ---- */
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 22px;
+  border-top: 1px solid var(--border-hairline);
+}
+
+.modal-footer .btn-outline {
+  flex: 0 0 auto;
+  min-width: 130px;
+  cursor: pointer;
+}
+
+/* "View Details" is a <button> on the card, so match the link buttons */
+button.btn-primary,
+button.btn-outline {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+/* ==========================================================================
    RESPONSIVE
    ========================================================================== */
 
@@ -458,5 +919,29 @@ body {
 
   .portfolio-buttons {
     flex-direction: column;
+  }
+
+  .flow-steps .arrow {
+    display: none;
+  }
+
+  .modal-panel {
+    padding: 38px 22px 24px;
+  }
+
+  .modal-panel::before {
+    margin: -38px -22px 35px;
+  }
+
+  .modal-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .modal-features {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-footer .btn-outline {
+    width: 100%;
   }
 }
