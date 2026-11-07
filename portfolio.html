@@ -98,6 +98,73 @@
       </div>
     </div>
 
+    <!-- ======================= Featured Client Project (NFL Edge) =======================
+         Needs one image in /images:  images/nfl-edge.png
+         "View Details" opens the popup defined at the bottom of this file (id="nfl-edge-details").
+    ============================================================================================ -->
+
+    <div class="portfolio-card">
+      <div class="card-media">
+        <span class="card-badge">AI Sports Analytics</span>
+        <span class="card-badge badge-client">Fiverr Client Project</span>
+        <img src="images/nfl-edge.png" alt="NFL Edge - Live NFL Odds, Line Movement and AI Analytics Dashboard">
+      </div>
+
+      <div class="portfolio-content">
+
+        <h3>NFL Edge — Live Odds, Line Movement &amp; AI Betting Analytics</h3>
+
+        <p>
+          Built for a <strong>Fiverr client</strong>: a real-time
+          <strong>NFL analytics platform</strong> that tracks active game lines,
+          line movement, and <strong>player props across multiple sportsbooks</strong>.
+          Game data flows in from the <strong>BallDontLie API</strong> and live odds
+          from <strong>The Odds API</strong>, is stored in <strong>Supabase</strong>,
+          and powers an <strong>OpenAI-driven chatbot</strong> that reads the
+          database and answers questions about games, props, injuries, and trends.
+        </p>
+
+        <div class="flow-steps">
+          <span class="step">BallDontLie API</span>
+          <span class="arrow">+</span>
+          <span class="step">The Odds API</span>
+          <span class="arrow">→</span>
+          <span class="step">Supabase</span>
+          <span class="arrow">→</span>
+          <span class="step">OpenAI Chatbot</span>
+          <span class="arrow">→</span>
+          <span class="step">Insights</span>
+        </div>
+
+        <ul class="portfolio-highlights">
+          <li><strong>Live line tracking</strong> — spreads, totals, and moneylines with the biggest movers surfaced automatically</li>
+          <li><strong>Player props comparison</strong> — DraftKings, FanDuel, BetMGM and Caesars side by side with best-price highlighting</li>
+          <li><strong>Data-grounded AI assistant</strong> — answers come from the stored data, not guesswork, and it can break down uploaded slips</li>
+        </ul>
+
+        <div class="portfolio-tags">
+          <span>BallDontLie API</span>
+          <span>The Odds API</span>
+          <span>Supabase</span>
+          <span>PostgreSQL</span>
+          <span>OpenAI API</span>
+          <span>AI Chatbot</span>
+          <span>Sports Analytics</span>
+          <span>Real-Time Data</span>
+          <span>Data Pipelines</span>
+          <span>API Integration</span>
+          <span>Data Visualization</span>
+          <span>Prompt Engineering</span>
+          <!-- add your frontend/backend here, e.g. <span>Next.js</span> <span>FastAPI</span> -->
+        </div>
+
+        <div class="portfolio-buttons single">
+          <button type="button" class="btn-primary" data-open-modal="nfl-edge-details" aria-haspopup="dialog">View Details</button>
+        </div>
+
+      </div>
+    </div>
+
     <!-- ======================= Project 1 (Green Flora) ======================= -->
 
     <div class="portfolio-card">
@@ -493,6 +560,291 @@
         <span>LLM</span>
         <span>Prompt Engineering</span>
         <span>Workflow Automation</span>
+        <span>API Integration</span>
+      </div>
+    </section>
+
+    <footer class="modal-footer">
+      <button type="button" class="btn-outline" data-close-modal>Close</button>
+    </footer>
+
+  </div>
+</dialog>
+
+<!-- ======================= Project Details Popup (NFL Edge) ======================= -->
+
+<dialog class="project-modal" id="nfl-edge-details" aria-labelledby="nfl-edge-details-title">
+  <div class="modal-panel">
+
+    <button type="button" class="modal-close" data-close-modal aria-label="Close details">&times;</button>
+
+    <header class="modal-header">
+      <span class="card-badge badge-client">Fiverr Client Project</span>
+      <h3 id="nfl-edge-details-title">NFL Edge — Live Odds, Line Movement &amp; AI Betting Analytics</h3>
+      <p class="modal-lead">
+        A live analytics dashboard that monitors active NFL games, tracks how lines move
+        across sportsbooks, compares player props, and lets users ask an AI assistant
+        questions that are answered directly from the stored data.
+      </p>
+    </header>
+
+    <div class="modal-stats">
+      <div class="stat"><span class="stat-label">Live Props</span><span class="stat-value">1,900+ tracked</span></div>
+      <div class="stat"><span class="stat-label">Sportsbooks</span><span class="stat-value">4 compared</span></div>
+      <div class="stat"><span class="stat-label">Database</span><span class="stat-value">Supabase</span></div>
+      <div class="stat"><span class="stat-label">AI Layer</span><span class="stat-value">OpenAI API</span></div>
+    </div>
+
+    <!-- ---------- Graphic 1: animated line movement chart ---------- -->
+    <section class="modal-section">
+      <h4>Line Movement, Tracked Live</h4>
+
+      <div class="nfl-chart">
+        <div class="nfl-chart-top">
+          <div>
+            <span class="nfl-chart-title">NYG @ PHI</span>
+            <span class="nfl-chart-sub">Spread · Week 9 · 3 sportsbooks</span>
+          </div>
+          <span class="nfl-chip">+2.0 pts since open</span>
+        </div>
+
+        <svg viewBox="0 0 640 230" role="img" aria-label="Illustrative stepped line chart of three sportsbooks moving a spread from 1.5 to 3.5">
+          <!-- grid + y labels -->
+          <g class="grid-lines">
+            <line x1="40" y1="30"   x2="620" y2="30"/>
+            <line x1="40" y1="67.5" x2="620" y2="67.5"/>
+            <line x1="40" y1="105"  x2="620" y2="105"/>
+            <line x1="40" y1="142.5" x2="620" y2="142.5"/>
+            <line x1="40" y1="180"  x2="620" y2="180"/>
+          </g>
+          <g class="axis-text" text-anchor="end">
+            <text x="30" y="34">3.5</text>
+            <text x="30" y="71.5">3</text>
+            <text x="30" y="109">2.5</text>
+            <text x="30" y="146.5">2</text>
+            <text x="30" y="184">1.5</text>
+          </g>
+
+          <!-- opening line -->
+          <line class="open-line" x1="40" y1="155" x2="620" y2="155"/>
+          <text class="axis-text" x="618" y="150" text-anchor="end">Open</text>
+
+          <!-- sportsbook lines (stepped, like real line movement) -->
+          <path class="draw l-mgm" pathLength="1" d="M40 182 H140 V107 H230 V69.5 H500 V32 H612"/>
+          <path class="draw l-dk"  pathLength="1" d="M40 180 H130 V105 H230 V67.5 H420 V30 H612"/>
+          <path class="draw l-fd"  pathLength="1" d="M40 178 H150 V103 H230 V65.5 H420 V28 H560 V65.5 H612"/>
+
+          <!-- latest value markers -->
+          <circle class="dot l-dk-fill"  cx="612" cy="30"   r="4.5"/>
+          <circle class="dot l-fd-fill"  cx="612" cy="65.5" r="4.5"/>
+
+          <!-- x labels -->
+          <g class="axis-text">
+            <text x="40"  y="212">Nov 2 · 4:00 AM</text>
+            <text x="620" y="212" text-anchor="end">Nov 7 · 10:29 AM</text>
+          </g>
+        </svg>
+
+        <div class="nfl-legend">
+          <span><i class="sw sw-mgm"></i>BetMGM</span>
+          <span><i class="sw sw-dk"></i>DraftKings</span>
+          <span><i class="sw sw-fd"></i>FanDuel</span>
+          <em>Illustrative preview of the in-app chart</em>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- Graphic 2: before / after ---------- -->
+    <section class="modal-section">
+      <h4>The Problem</h4>
+      <div class="nfl-ba">
+        <div class="ba-card before">
+          <span class="ba-tag">Before</span>
+          <strong>Tabs, spreadsheets, guesswork</strong>
+          <p>Bettors and analysts hop between sportsbooks and injury pages to see where a line opened, where it is now, and who has the best price. Big moves get missed.</p>
+        </div>
+        <div class="ba-card after">
+          <span class="ba-tag">After · NFL Edge</span>
+          <strong>One dashboard and one AI assistant</strong>
+          <p>Every line, prop, injury and movement history in one place, with an assistant that answers questions straight from the stored data.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- Graphic 3: data pipeline ---------- -->
+    <section class="modal-section">
+      <h4>How the Data Flows</h4>
+
+      <div class="nfl-pipeline">
+        <div class="pipe-col">
+          <div class="pipe-node">
+            <span class="pipe-mono">BD</span>
+            <b>BallDontLie API</b>
+            <small>Games, players, injuries, recent stats</small>
+          </div>
+          <div class="pipe-node">
+            <span class="pipe-mono">OA</span>
+            <b>The Odds API</b>
+            <small>Lines and props from 4 sportsbooks</small>
+          </div>
+        </div>
+
+        <div class="pipe-link"></div>
+
+        <div class="pipe-node accent">
+          <span class="pipe-mono">SB</span>
+          <b>Supabase</b>
+          <small>Odds snapshots and full line history</small>
+        </div>
+
+        <div class="pipe-link"></div>
+
+        <div class="pipe-node">
+          <span class="pipe-mono">AI</span>
+          <b>OpenAI API</b>
+          <small>Reads the data, writes the answer</small>
+        </div>
+
+        <div class="pipe-link"></div>
+
+        <div class="pipe-col">
+          <div class="pipe-node">
+            <span class="pipe-mono">UI</span>
+            <b>Dashboard</b>
+            <small>Games, props, charts, injuries</small>
+          </div>
+          <div class="pipe-node">
+            <span class="pipe-mono">Q&amp;A</span>
+            <b>AI Chat</b>
+            <small>Trends, moves, slip breakdowns</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- Graphic 4: props comparison mock ---------- -->
+    <section class="modal-section">
+      <h4>Player Props, Side by Side</h4>
+
+      <div class="nfl-panel">
+        <div class="nfl-panel-bar"><i></i><i></i><i></i><span>Player props · best price highlighted</span></div>
+        <div class="nfl-table-wrap">
+          <table class="nfl-table">
+            <thead>
+              <tr>
+                <th>Market</th>
+                <th>Last 10</th>
+                <th>DraftKings</th>
+                <th>FanDuel</th>
+                <th>BetMGM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>QB · Passing Yards</b><small>Hit rate 7/10</small></td>
+                <td><span class="spark"><i class="h"></i><i class="h"></i><i class="m"></i><i class="h"></i><i class="h"></i><i class="m"></i><i class="h"></i><i class="h"></i><i class="h"></i><i class="m"></i></span></td>
+                <td>245.5<small>O -112</small></td>
+                <td class="best">247.5<small>O -110</small></td>
+                <td>244.5<small>O -115</small></td>
+              </tr>
+              <tr>
+                <td><b>RB · Rushing Yards</b><small>Hit rate 4/10</small></td>
+                <td><span class="spark"><i class="m"></i><i class="h"></i><i class="m"></i><i class="m"></i><i class="h"></i><i class="h"></i><i class="m"></i><i class="h"></i><i class="m"></i><i class="m"></i></span></td>
+                <td class="best">72.5<small>O -108</small></td>
+                <td>71.5<small>O -114</small></td>
+                <td>73.5<small>O -115</small></td>
+              </tr>
+              <tr>
+                <td><b>WR · Receiving Yards</b><small>Hit rate 8/10</small></td>
+                <td><span class="spark"><i class="h"></i><i class="h"></i><i class="h"></i><i class="m"></i><i class="h"></i><i class="h"></i><i class="m"></i><i class="h"></i><i class="h"></i><i class="h"></i></span></td>
+                <td>67.5<small>O -114</small></td>
+                <td>68.5<small>O -114</small></td>
+                <td class="best">66.5<small>O -105</small></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="nfl-note">Illustrative layout. The live app shows real players, markets, and prices.</p>
+    </section>
+
+    <!-- ---------- Graphic 5: AI chat mock ---------- -->
+    <section class="modal-section">
+      <h4>Ask the Data</h4>
+
+      <div class="nfl-panel">
+        <div class="nfl-panel-bar"><i></i><i></i><i></i><span>NFL Edge AI · Trends · Props · Insights</span></div>
+
+        <div class="nfl-chat">
+          <div class="bubble user">Which props have the biggest line movement today?</div>
+          <div class="bubble ai">
+            <span class="who">NFL Edge AI</span>
+            Biggest swing on the board: <b>JAX @ BAL</b>, with the spread up <b>+9.2 pts</b> since open.
+            Next are the totals for <b>NYJ @ KC (+3.5)</b> and <b>LV @ SF (+3.2)</b>.
+          </div>
+        </div>
+
+        <div class="nfl-prompts">
+          <span>Summarize key injuries for tonight's games</span>
+          <span>Find hot trends over the last 10 games</span>
+          <span>Break down the slip I upload</span>
+        </div>
+      </div>
+      <p class="nfl-note">Sample conversation based on the live board.</p>
+    </section>
+
+    <!-- ---------- Graphic 6: feature cards ---------- -->
+    <section class="modal-section">
+      <h4>Key Features</h4>
+
+      <div class="nfl-features">
+        <div class="nfl-feature">
+          <span class="nfl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+          <strong>Live games board</strong>
+          <p>Spreads, totals and moneylines with week filters.</p>
+        </div>
+        <div class="nfl-feature">
+          <span class="nfl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
+          <strong>Biggest moves</strong>
+          <p>Sharpest spread and total swings surfaced automatically.</p>
+        </div>
+        <div class="nfl-feature">
+          <span class="nfl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+          <strong>Movement charts</strong>
+          <p>Full spread and total history per sportsbook.</p>
+        </div>
+        <div class="nfl-feature">
+          <span class="nfl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
+          <strong>Props comparison</strong>
+          <p>Market filters, player search and best-price highlights.</p>
+        </div>
+        <div class="nfl-feature">
+          <span class="nfl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+          <strong>Injury reports</strong>
+          <p>Player status shown inside every game's detail view.</p>
+        </div>
+        <div class="nfl-feature">
+          <span class="nfl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+          <strong>Data-grounded AI</strong>
+          <p>Answers and slip breakdowns come from stored data, not guesses.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="modal-section">
+      <h4>Tech Stack</h4>
+      <div class="portfolio-tags">
+        <span>BallDontLie API</span>
+        <span>The Odds API</span>
+        <span>Supabase</span>
+        <span>PostgreSQL</span>
+        <span>OpenAI API</span>
+        <span>AI Chatbot</span>
+        <span>Prompt Engineering</span>
+        <span>Sports Analytics</span>
+        <span>Real-Time Data</span>
+        <span>Data Pipelines</span>
+        <span>Data Visualization</span>
         <span>API Integration</span>
       </div>
     </section>
